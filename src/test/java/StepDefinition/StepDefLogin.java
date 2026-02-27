@@ -1,6 +1,7 @@
 package StepDefinition;
 
 
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -27,7 +28,8 @@ public class StepDefLogin
 		driver.get("https://admin-demo.nopcommerce.com/login");
 		//driver.findElement(By.xpath("//input[@name='Email']")).sendKeys("admin@yourstore.com");
 		//driver.findElement(By.xpath("//input[@name='Password']")).sendKeys("admin");
-		driver.findElement(By.xpath("//button[@type='submit']")).click();		
+		driver.findElement(By.xpath("//button[@type='submit']")).click();	
+		Assert.assertTrue(false);
 	}
 	
 	@Given("Login to Facebook")
