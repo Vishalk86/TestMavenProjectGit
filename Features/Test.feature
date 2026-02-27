@@ -1,8 +1,10 @@
 Feature: Login
 
 
-Scenario:
+Scenario: Valid Login
 Given User Launch Chrome Browser
 When Login to Demo
-Given Login to Facebook
 
+
+Scenario: Invalid Login
+Given  Login to Demo2
