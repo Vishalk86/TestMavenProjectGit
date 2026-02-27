@@ -32,13 +32,12 @@ public class StepDefLogin
 		//driver.findElement(By.xpath("//input[@name='Email']")).sendKeys("admin@yourstore.com");
 		//driver.findElement(By.xpath("//input[@name='Password']")).sendKeys("admin");
 		driver.findElement(By.xpath("//button[@type='submit']")).click();	
-		//Assert.assertTrue(false);
 	}
 	
 	@Given("Login to Demo2")
 	public void login_to_demo2() throws Exception 
 	{
-		Thread.sleep(2000);
+		Assert.assertTrue(false);
 		System.out.println("This is test 2.");
 		//driver.findElement(By.xpath("//a[text()='Logout']")).click();
 	}
