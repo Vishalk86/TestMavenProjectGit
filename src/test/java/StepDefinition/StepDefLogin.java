@@ -21,13 +21,18 @@ public class StepDefLogin
 		driver.manage().window().maximize();
 	}
 	
-	@When("Login to Github")
-	public void login_to_Github() 
+	@When("Login to Demo")
+	public void login_to_Demo() 
 	{
-		driver.get("https://github.com/login");
-		driver.findElement(By.xpath("//input[@name='login']")).sendKeys("Vishalk86");
-		driver.findElement(By.xpath("//input[@name='password']")).sendKeys("Vishalgit8611");
-		driver.findElement(By.xpath("//input[@type='submit']")).click();
-		junit.framework.Assert.assertTrue(false);
+		driver.get("https://admin-demo.nopcommerce.com/login");
+		//driver.findElement(By.xpath("//input[@name='Email']")).sendKeys("admin@yourstore.com");
+		//driver.findElement(By.xpath("//input[@name='Password']")).sendKeys("admin");
+		driver.findElement(By.xpath("//button[@type='submit']")).click();		
+	}
+	
+	@Given("Login to Facebook")
+	public void login_to_facebook() 
+	{
+		this.driver.navigate().to("https://www.facebook.com/");
 	}
 }
