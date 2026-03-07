@@ -1,44 +1,123 @@
 package StepDefinition;
 
+import java.io.File;
+import java.io.IOException;
 
-import org.junit.Assert;
-
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import io.cucumber.java.After;
+import io.cucumber.java.AfterStep;
 import io.cucumber.java.Before;
+import io.cucumber.java.Scenario;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class StepDefLogin 
 {
-    WebDriver driver;
-	
+    static WebDriver driver;
     
-	@Given("User Launch Chrome Browser")
-	public void user_launch_chrome_browser() 
+    
+	@Given("Login to orangehrm")
+	public void login_to_orangehrm() throws Exception 
 	{
 		WebDriverManager.chromedriver().setup();
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
-	}
-	
-	@When("Login to Demo")
-	public void login_to_Demo() 
-	{
-		driver.get("https://admin-demo.nopcommerce.com/login");
-		//driver.findElement(By.xpath("//input[@name='Email']")).sendKeys("admin@yourstore.com");
-		//driver.findElement(By.xpath("//input[@name='Password']")).sendKeys("admin");
+		driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
+		Thread.sleep(3000);
+		System.out.println("This Test Case is Passed.");
+		driver.findElement(By.xpath("//input[@name='username']")).sendKeys("Admin");
+		driver.findElement(By.xpath("//input[@name='password']")).sendKeys("admin123");
 		driver.findElement(By.xpath("//button[@type='submit']")).click();	
 	}
 	
-	@Given("Login to Demo2")
-	public void login_to_demo2() throws Exception 
+	@Given("Logout to orangehrm")
+	public void logout_to_orangehrm() throws Exception 
 	{
-		Assert.assertTrue(false);
-		System.out.println("This is test 2.");
-		//driver.findElement(By.xpath("//a[text()='Logout']")).click();
+		Thread.sleep(3000);
+		driver.findElement(By.xpath("//p[text()='Nikita user']")).click();
+		driver.findElement(By.xpath("//a[text()='Logout']")).click();
 	}
+	
+	@Given("Login to practice")
+	public void login_to_practice() 
+	{
+		driver.navigate().to("https://practicetestautomation.com/practice-test-login/");
+		driver.findElement(By.xpath("//input[@name='username']")).sendKeys("student");
+		driver.findElement(By.xpath("//input[@name='password']")).sendKeys("Password123");
+		driver.findElement(By.xpath("//button[@id='submit']")).click();
+	}
+
+	@Given("Logout to practice")
+	public void logout_to_practice() 
+	{
+		driver.findElement(By.xpath("//a[text()='Log out']")).click();
+	}
+	
+//	@After
+//	public void teardown(Scenario sc)
+//	{
+//		if(sc.isFailed()==true)
+//		{
+//			String fileWithpath = "E:\\Eclipse\\TestMavenProject\\Screenshots\\failedScreenshot.png";
+//			
+//			TakesScreenshot scrshot = (TakesScreenshot) driver;
+//			File src = scrshot.getScreenshotAs(OutputType.FILE);
+//			File DestFile = new File(fileWithpath);
+//			
+//			try 
+//			{
+//				FileUtils.copyFile(src, DestFile);
+//			} catch (IOException e) {e.printStackTrace();	}
+//		}
+//	}
+//	
+//	@AfterStep
+//	public void addScreenshotsToExtentReport(Scenario scenario)
+//	{
+//		final byte[] screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
+//		scenario.attach(screenshot, "image/png", scenario.getName());
+//	}
 }
+
+
+
+//WebDriverManager.chromedriver().setup();
+//driver = new ChromeDriver();
+//driver.manage().window().maximize();
+//driver.get("https://www.facebook.com/");
+//driver.quit();
+
+//WebDriverManager.chromedriver().setup();
+//driver = new ChromeDriver();
+//driver.manage().window().maximize();
+//driver.get("https://admin-demo.nopcommerce.com/login");
+//driver.findElement(By.xpath("//button[@type='submit']")).click();
+
+//Thread.sleep(3000);
+//driver.findElement(By.xpath("//a[text()='Logout']")).click();
+
+
+//driver.navigate().to("https://practicetestautomation.com/practice-test-login/");
+//driver.findElement(By.xpath("//input[@name='username']")).sendKeys("student");
+//driver.findElement(By.xpath("//input[@name='password']")).sendKeys("Password123");
+//driver.findElement(By.xpath("//button[@id='submit']")).click();
+
+
+
+//driver.findElement(By.xpath("//a[text()='Log out']")).click();
+
+
+
+
+
+
+
+
+

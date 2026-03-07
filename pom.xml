@@ -15,12 +15,7 @@
   </properties>
 
   <dependencies>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>4.11</version>
-      <scope>test</scope>
-    </dependency>
+    
     
     <!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-html -->
 	<dependency>
@@ -44,12 +39,20 @@
 	    <version>7.15.0</version>
 	</dependency>
 	
-	<!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-junit -->
+	<!-- Source: https://mvnrepository.com/artifact/org.testng/testng -->
+	<dependency>
+	    <groupId>org.testng</groupId>
+	    <artifactId>testng</artifactId>
+	    <version>7.12.0</version>
+	    <scope>test</scope>
+	</dependency>
+	
+	<!-- Source: https://mvnrepository.com/artifact/io.cucumber/cucumber-testng -->
 	<dependency>
 	    <groupId>io.cucumber</groupId>
-	    <artifactId>cucumber-junit</artifactId>
+	    <artifactId>cucumber-testng</artifactId>
 	    <version>7.15.0</version>
-	    <scope>test</scope>
+	    <scope>compile</scope>
 	</dependency>
 	
 	<!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-jvm-deps -->
@@ -103,6 +106,22 @@
 	    <version>1.5.0</version>
 	    <scope>system</scope>
 	    <systemPath>C:\Program Files\Java\jdk-25\lib\tools-1.5.0.jar</systemPath>
+	</dependency>
+	
+	<!-- Source: https://mvnrepository.com/artifact/commons-io/commons-io -->
+	<dependency>
+	    <groupId>commons-io</groupId>
+	    <artifactId>commons-io</artifactId>
+	    <version>2.21.0</version>
+	    <scope>compile</scope>
+	</dependency>
+	
+	<!-- Source: https://mvnrepository.com/artifact/tech.grasshopper/extentreports-cucumber7-adapter -->
+	<dependency>
+	    <groupId>tech.grasshopper</groupId>
+	    <artifactId>extentreports-cucumber7-adapter</artifactId>
+	    <version>1.14.0</version>
+	    <scope>compile</scope>
 	</dependency>
     
   </dependencies>

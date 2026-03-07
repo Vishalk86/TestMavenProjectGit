@@ -1,10 +1,17 @@
 Feature: Login
 
 
-Scenario: Valid Login
-Given User Launch Chrome Browser
-When Login to Demo
+Scenario: OrangeHrm1
+Given Login to orangehrm
 
 
-Scenario: Invalid Login
-Given  Login to Demo2
+Scenario: OrangeHrm2
+Given  Logout to orangehrm
+
+
+Scenario: Practice1
+Given Login to practice
+
+
+Scenario: Practice2
+Given  Logout to practice
